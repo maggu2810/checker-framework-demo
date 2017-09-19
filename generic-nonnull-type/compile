@@ -1,14 +1,17 @@
 #!/bin/sh
+
+CF_VER=2.2.0
+
 javac \
     -version \
     -verbose \
     -AprintErrorStack -AprintAllQualifiers \
     -d out \
-    -classpath jars/org.eclipse.smarthome.automation.api-0.9.0-SNAPSHOT.jar:jars/checker-2.1.14.jar \
+    -classpath ../checkerframework/checker-"${CF_VER}".jar \
     src/Test.java \
     -processor org.checkerframework.checker.nullness.NullnessChecker \
     -g \
     -target 1.8 -source 1.8 \
     -encoding UTF-8 \
     -Astubs=stubs -AstubWarnIfNotFound -AstubWarnIfOverwritesBytecode -AstubDebug -AshowSuppressWarningKeys \
-    -Xbootclasspath/p:jars/org.checkerframework.jdk8-2.1.14.jar
+    -Xbootclasspath/p:../checkerframework/jdk8-"${CF_VER}".jar
