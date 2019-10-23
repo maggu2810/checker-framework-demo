@@ -1,0 +1,21 @@
+#!/bin/sh
+
+CF_VER=2.11.1
+
+javac \
+    \
+    -d out \
+    src/Test.java \
+    -version \
+    -verbose \
+    -AprintAllQualifiers \
+    -g \
+    -encoding UTF-8 \
+    -AshowSuppressWarningKeys \
+    \
+    -J-Xbootclasspath/p:../checkerframework/javacutil-"${CF_VER}".jar \
+    -Xbootclasspath/p:../checkerframework/jdk8-"${CF_VER}".jar \
+    -cp ../checkerframework/checker-qual-"${CF_VER}".jar \
+    -processorpath ../checkerframework/checker-"${CF_VER}".jar \
+    -processor org.checkerframework.checker.nullness.NullnessChecker \
+    -source 8 -target 8
