@@ -13,9 +13,9 @@ javac \
     -encoding UTF-8 \
     -AshowSuppressWarningKeys \
     \
-    -J-Xbootclasspath/p:../checkerframework/javacutil-"${CF_VER}".jar \
-    -Xbootclasspath/p:../checkerframework/jdk8-"${CF_VER}".jar \
-    -cp ../checkerframework/checker-qual-"${CF_VER}".jar \
-    -processorpath ../checkerframework/checker-"${CF_VER}".jar \
+    -J-Xbootclasspath/p:../libs/com.google.errorprone/javac-9+181-r4173-1.jar \
+    -Xbootclasspath/p:../libs/checkerframework/jdk8-"${CF_VER}".jar \
+    -cp ../libs/checkerframework/checker-qual-"${CF_VER}".jar \
+    -processorpath ../libs/checkerframework/checker-"${CF_VER}".jar \
     -processor org.checkerframework.checker.nullness.NullnessChecker \
     -source 8 -target 8

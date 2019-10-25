@@ -7,11 +7,11 @@ javac \
     -verbose \
     -AprintErrorStack -AprintAllQualifiers \
     -d out \
-    -classpath ../checkerframework/checker-"${CF_VER}".jar \
+    -classpath ../libs/checkerframework/checker-"${CF_VER}".jar \
     src/Test.java \
     -processor org.checkerframework.checker.nullness.NullnessChecker \
     -g \
     -target 1.8 -source 1.8 \
     -encoding UTF-8 \
     -Astubs=stubs -AstubWarnIfNotFound -AstubWarnIfOverwritesBytecode -AstubDebug -AshowSuppressWarningKeys \
-    -Xbootclasspath/p:../checkerframework/jdk8-"${CF_VER}".jar
+    -Xbootclasspath/p:../libs/checkerframework/jdk8-"${CF_VER}".jar

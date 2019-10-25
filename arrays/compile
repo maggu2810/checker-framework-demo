@@ -1,0 +1,17 @@
+#!/bin/sh
+
+CF_VER=2.2.0
+
+javac \
+    -version \
+    -verbose \
+    -AprintErrorStack -AprintAllQualifiers \
+    -d out \
+    -classpath ../libs/checkerframework/checker-"${CF_VER}".jar \
+    src/Test.java \
+    -processor org.checkerframework.checker.nullness.NullnessChecker \
+    -g \
+    -target 1.8 -source 1.8 \
+    -encoding UTF-8 \
+    -Astubs=stubs -AstubWarnIfNotFound -AstubWarnIfOverwritesBytecode -AstubDebug -AshowSuppressWarningKeys \
+    -Xbootclasspath/p:../libs/checkerframework/jdk8-"${CF_VER}".jar
