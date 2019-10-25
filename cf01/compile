@@ -1,11 +1,14 @@
 #!/bin/sh
+
+CF_VER=2.1.14
+
 javac \
     -version -verbose -AprintErrorStack -AprintAllQualifiers \
     -d out \
-    -classpath jars/checker-2.1.14.jar src/Test.java \
+    -classpath ../libs/checkerframework/checker-"${CF_VER}".jar src/Test.java \
     -processor org.checkerframework.checker.nullness.NullnessChecker \
     -g \
     -target 1.8 -source 1.8 \
     -encoding UTF-8 \
     -AshowSuppressWarningKeys \
-    -Xbootclasspath/p:jars/org.checkerframework.jdk8-2.1.14.jar
+    -Xbootclasspath/p:../libs/checkerframework/jdk8-"${CF_VER}".jar
